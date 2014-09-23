@@ -1,0 +1,77 @@
+# app/config/security.yml
+#security:
+    #encoders:
+       # Examples:
+        #Indago\GeneralBundle\Entity\Profil:
+           #id:  Indago.service.md5password.encoder
+
+    #providers:            # Required
+        #my_entity_provider:
+            #entity:
+                #class:              IndagoGeneralBundle:Profil
+                #property:           Email
+                #manager_name:       ~
+    #acl:
+      #connection: default
+    #hide_user_not_found: false 
+
+    #firewalls:            # Required
+        #some_firewall_listener:
+            #pattern:              ^/
+            #security:             true
+            #form_login:
+                # submit the login form here
+                #check_path: /login_check
+
+                # the user is redirected here when they need to log in
+                #login_path: /login
+
+                # if true, forward the user to the login form instead of redirecting
+                #use_forward: false
+
+                # login success redirecting options (read further below)
+                #always_use_default_target_path: false
+                #default_target_path:            /user/Accueil/
+                #target_path_parameter:          _target_path
+                #use_referer:                    false
+
+                # login failure redirecting options (read further below)
+                #failure_path:    /login
+                #failure_forward: false
+
+
+                # field names for the username and password fields
+                #username_parameter: _username
+                #password_parameter: _password
+
+
+                # by default, the login form *must* be a POST, not a GET
+                #post_only:      true
+                #remember_me:    false
+            
+            #logout:
+                #intention:            logout
+                #path:                 /logout
+                #target:               /
+                #success_handler:      ~
+                #invalidate_session:   true
+                #delete_cookies:
+
+                    # Prototype
+                    #name:
+                        #path:                 ~
+                        #domain:               ~
+                #handlers:             []
+            #anonymous:
+                #key:                  4f954a0667e01
+            #switch_user:
+                #provider:             ~
+                #parameter:            _switch_user
+                #role:                 ROLE_ALLOWED_TO_SWITCH
+    #access_control:
+      #  - { path: ^/user/, roles: ROLE_USER }
+
+    #role_hierarchy:
+        #ROLE_ADMIN:      [ROLE_ORGANIZER, ROLE_USER]
+        #ROLE_SUPERADMIN: [ROLE_ADMIN]
+                

@@ -1,0 +1,9 @@
+parameters:
+    Indago.twig.class: Indago\GeneralBundle\Twig\Extension\TwigExtension
+
+services:
+    Indago.twig.twig_extension:
+        class: '%Indago.twig.class%'
+        tags:
+            - { name: twig.extension }
+            

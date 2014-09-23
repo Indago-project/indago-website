@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Indago\GeneralBundle\Entity\Auteur" 
+  repository-class="Indago\GeneralBundle\Entity\AuteurRepository" table="Auteur">
+    <id name="idAuteur" type="bigint" column="id_auteur">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="nomAuteur" type="string" column="nom_auteur" length="100" nullable="true"/>
+    <field name="prenomAuteur" type="string" column="prenom_auteur" length="100" nullable="true"/>
+    <field name="emailAuteur" type="string" column="email_auteur" length="100" nullable="true"/>
+    <field name="sitAuteur" type="string" column="sit_auteur" length="100" nullable="true"/>
+    <field name="compteAuteur" type="string" column="compte_auteur" length="100" nullable="true"/>
+  </entity>
+</doctrine-mapping>

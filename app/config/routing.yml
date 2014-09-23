@@ -1,0 +1,12 @@
+Indago_compte:
+    resource: "@IndagoCompteBundle/Resources/config/routing.yml"
+    prefix:   /
+
+Indago_general:
+    resource: "@IndagoGeneralBundle/Resources/config/routing.yml"
+    prefix:   /user
+
+Indago_search:
+    resource: "@IndagoSearchBundle/Resources/config/routing.yml"
+    prefix:   /user
+

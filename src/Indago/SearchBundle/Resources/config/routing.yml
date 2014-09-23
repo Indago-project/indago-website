@@ -1,0 +1,7 @@
+Indago_search_homepage:
+    pattern:  /recherche-mot-cle
+    defaults: { _controller: "IndagoSearchBundle:Default:index" }
+    
+Indago_search_event:
+    pattern:  /recherche-evenement
+    defaults: { _controller: "IndagoSearchBundle:Default:eventSearch" }

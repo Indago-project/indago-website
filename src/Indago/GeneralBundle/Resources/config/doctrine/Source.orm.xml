@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Indago\GeneralBundle\Entity\Source" 
+  repository-class="Indago\GeneralBundle\Entity\SourceRepository" table="source">
+    <indexes>
+      <index name="IDX_5F8A7F73EF06DDFD" columns="id_articles"/>
+    </indexes>
+    <id name="idSource" type="bigint" column="id_source">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="nomSource" type="string" column="nom_source" length="100" nullable="true"/>
+    <field name="urlSource" type="string" column="url_source" length="200" nullable="true"/>
+    <many-to-one field="idArticles" target-entity="Articles">
+      <join-columns>
+        <join-column name="id_articles" referenced-column-name="id_article"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

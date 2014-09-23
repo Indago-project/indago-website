@@ -1,0 +1,7 @@
+parameters:
+#    Indago_loisir.example.class: Indago\LoisirBundle\Example
+
+services:
+#    Indago_loisir.example:
+#        class: %Indago_loisir.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

@@ -1,0 +1,26 @@
+Indago_compte_home_page:
+    pattern:   /
+    defaults:  { _controller: "IndagoCompteBundle:Default:login"}
+
+Indago_compte_rendermenusite:
+    pattern: /render-menu-site
+    defaults: { _controller: 'IndagoCompteBundle:Default:renderMenuSite'}
+    
+Indago_compte_rendermenu_user:
+    pattern: /render-menu-user
+    defaults: { _controller: 'IndagoCompteBundle:Default:renderMenuUser'}
+    
+Indago_compte_rendermenu:
+    pattern: /render-menu
+    defaults: { _controller: 'IndagoCompteBundle:Default:renderMenu'}
+    
+login:
+    pattern:   /login
+    defaults:  { _controller: "IndagoCompteBundle:Default:login"}
+    
+login_check:
+    pattern:   /login_check
+
+logout:
+   pattern:   /logout
+   defaults:  { _controller: "IndagoCompteBundle:Default:logout"}

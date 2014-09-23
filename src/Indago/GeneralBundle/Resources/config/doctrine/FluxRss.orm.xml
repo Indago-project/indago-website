@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Indago\GeneralBundle\Entity\FluxRss" 
+  repository-class="Indago\GeneralBundle\Entity\FluxRssRepository" table="Flux_rss">
+    <indexes>
+      <index name="IDX_5D8EAC97B029E316" columns="id_site_ref"/>
+    </indexes>
+    <id name="idFluxRss" type="bigint" column="id_flux_rss">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="xpathFluxRss" type="string" column="xpath_flux_rss" length="200" nullable="true"/>
+    <field name="lienFluxRss" type="string" column="lien_flux_rss" length="200" nullable="true"/>
+    <many-to-one field="idSiteRef" target-entity="Sitereferent">
+      <join-columns>
+        <join-column name="id_site_ref" referenced-column-name="id_site_ref"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

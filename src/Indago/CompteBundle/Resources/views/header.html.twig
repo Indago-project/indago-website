@@ -1,0 +1,67 @@
+ {% block content_header %}
+ <div id="wrapper">
+      <!-- Sidebar -->
+      <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" {{ path('Indago_general_homepage') }}>Indago</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <ul class="nav navbar-nav side-nav">
+            <li class="active"><a href="index.html"><i class="fa fa-dashboard"></i> Accueil</a></li>
+            <li><a href="charts.html"><i class="fa fa-bar-chart-o"></i> Lire plutard</a></li>
+            <li><a href="tables.html"><i class="fa fa-table"></i>Ajouter un site</a></li>
+          	<li><a href="tables.html"><i class="fa fa-table"></i>Toutes les news</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              	<i class="fa fa-caret-square-o-down"></i> Par site <b class="caret"></b></a>
+	              <ul class="dropdown-menu">
+	              
+	                	{#% render url('Indago_compte_rendermenusite') %#}
+	                	
+	              </ul>
+            </li>
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right navbar-user">
+          {#% if app.user is defined and app.user %#}
+           	  <li class="dropdown user-dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Articles <b class="caret"></b></a>
+	              <ul class="dropdown-menu">
+	                <li><a href="#"><i class="fa fa-user"></i> Creer article</a></li>
+	                <li><a href="#"><i class="fa fa-gear"></i> Modifier un article</a></li>
+	                {#% render url('Indago_compte_rendermenusite') %#}
+	              </ul>
+            </li>
+	        {#% endif %#}
+            <li>
+              <a href="#"><i class="fa fa-bell"></i> Alerts <span class="badge">3</span></a>
+            </li>
+             {#% if app.user is defined and app.user %#}
+	            <li class="dropdown user-dropdown">
+	              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Adaminisatrator <b class="caret"></b></a>
+	              <ul class="dropdown-menu">
+	                <li><a href="#"><i class="fa fa-user"></i> Profil</a></li>
+	                <li><a href="#"><i class="fa fa-gear"></i> Paramètres</a></li>
+	                <li class="divider"></li>
+	                <li><a href="#"><i class="fa fa-power-off"></i> Se déconnecter</a></li>
+	                {#% render url('Indago_compte_rendermenusite') %#}
+	              </ul>
+           		 </li>
+           		{#% endif %#}
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </nav> 
+  </div>
+  </body>
+</html>
+ 
+ {% endblock %}

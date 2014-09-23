@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Indago\GeneralBundle\Entity\Commentaire" 
+  repository-class="Indago\GeneralBundle\Entity\CommentaireRepository" table="Commentaire">
+    <indexes>
+      <index name="IDX_E16CE76B5E5C27E9" columns="iduser"/>
+    </indexes>
+    <id name="idCommentaire" type="bigint" column="id_commentaire">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="commentaire" type="text" column="Commentaire" nullable="true"/>
+    <field name="idarticles" type="integer" column="idArticles" nullable="true"/>
+    <many-to-one field="iduser" target-entity="Ulisateur">
+      <join-columns>
+        <join-column name="iduser" referenced-column-name="id_utilisateur"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

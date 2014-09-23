@@ -1,0 +1,6 @@
+parameters:
+#    Indago_compte.example.class: Indago\CompteBundle\Example
+
+services:
+  Indago.service.md5password.encoder:
+      class: Indago\CompteBundle\Services\CustomMd5PasswordEncoder

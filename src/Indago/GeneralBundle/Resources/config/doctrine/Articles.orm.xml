@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Indago\GeneralBundle\Entity\Articles" 
+  repository-class="Indago\GeneralBundle\Entity\ArticlesRepository" table="articles">
+    <indexes>
+      <index name="IDX_BFDD3168C9486A13" columns="id_categorie"/>
+      <index name="IDX_BFDD3168236D04AD" columns="id_auteur"/>
+    </indexes>
+    <id name="idArticle" type="bigint" column="id_article">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="titreArticle" type="string" column="titre_article" length="200" nullable="true"/>
+    <field name="contenuArticle" type="text" column="contenu_article" nullable="true"/>
+    <field name="couvArticle" type="string" column="couv_article" length="100" nullable="true"/>
+    <field name="description" type="text" column="description" nullable="true"/>
+    <many-to-one field="idAuteur" target-entity="Auteur">
+      <join-columns>
+        <join-column name="id_auteur" referenced-column-name="id_auteur"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idCategorie" target-entity="Categorie">
+      <join-columns>
+        <join-column name="id_categorie" referenced-column-name="id_categorie"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

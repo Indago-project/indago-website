@@ -1,0 +1,24 @@
+Indago_general_homepage:
+    pattern: /Accueil/
+    defaults: { _controller: 'IndagoGeneralBundle:Default:index'}
+    
+
+    
+Indago_profil_homepage:
+    pattern: /Profil/
+    defaults: { _controller: 'IndagoGeneralBundle:Default:profil'}
+    
+Indago_contact:
+    pattern: /contacter-mois
+    defaults: { _controller: 'IndagoGeneralBundle:Default:EnvoieMail'}
+ 
+Indago_general_commen_ca_marche:
+    pattern: /comment_ca_marche
+    defaults: { _controller: 'IndagoGeneralBundle:Default:CommentCaMarche'}
+    
+Indago_general_aide:
+    pattern: /aide
+    defaults: { _controller: 'IndagoGeneralBundle:Default:Aide'}
+    
+
+    

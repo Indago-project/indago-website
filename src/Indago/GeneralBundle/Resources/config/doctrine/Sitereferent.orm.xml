@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Indago\GeneralBundle\Entity\Sitereferent" 
+  repository-class="Indago\GeneralBundle\Entity\SiteReferentRepository" table="SiteReferent">
+    <indexes>
+      <index name="IDX_90311674EF06DDFD" columns="id_articles"/>
+      <index name="IDX_903116746B3CA4B" columns="id_user"/>
+    </indexes>
+    <id name="idSiteRef" type="bigint" column="id_site_ref">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="nomSiteRef" type="string" column="nom_site_ref" length="200" nullable="true"/>
+    <field name="lienSiteRef" type="string" column="lien_site_ref" length="200" nullable="true"/>
+    <many-to-one field="idUser" target-entity="Ulisateur">
+      <join-columns>
+        <join-column name="id_user" referenced-column-name="id_utilisateur"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idArticles" target-entity="Articles">
+      <join-columns>
+        <join-column name="id_articles" referenced-column-name="id_article"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,19 @@
+{% block head %}
+	{% include 'IndagoGeneralBundle::includeCss.html.twig' %}
+{% endblock %}
+
+{% block javascript %}
+        {% include 'IndagoGeneralBundle::includeJs.html.twig' %}
+{% endblock %}
+
+{% block body %}
+    {% block content_header %}
+       {% include 'IndagoCompteBundle::header.html.twig' %}
+    {% endblock %}
+    <div class="container-fluid">
+		{% block content %}
+		
+		{% endblock %}
+    </div>
+    
+{% endblock %}

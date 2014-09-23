@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Indago\GeneralBundle\Entity\Utilisateur" 
+  	repository-class="Indago\GeneralBundle\Entity\UtilisateurRepository" table="Utilisateur">
+    <id name="idUtilisateur" type="bigint" column="id_utilisateur">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="nomUtisateur" type="string" column="nom_utisateur" length="100" nullable="true"/>
+    <field name="prenomUtilisateur" type="string" column="prenom_utilisateur" length="100" nullable="true"/>
+    <field name="emailUtilisateur" type="string" column="email_utilisateur" length="100" nullable="true"/>
+    <field name="salt" type="string" column="salt" length="40" nullable="true"/>
+    <field name="motPasse" type="string" column="mot_passe" length="200" nullable="true"/>
+  </entity>
+</doctrine-mapping>

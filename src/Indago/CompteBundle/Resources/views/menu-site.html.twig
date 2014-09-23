@@ -1,0 +1,10 @@
+{% block content_sidebar %}
+{% if menus is defined and menus %}
+     {% for sm in menu.sousMenu %}
+          <li>
+          		<a href="{{path(sm.nom)}}">{{ sm.route }}</a>
+          </li>
+     {% endfor %}
+          		
+  {% endif %}
+{% endblock %}
